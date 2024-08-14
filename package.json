@@ -20,9 +20,15 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
+    "@langchain/community": "^0.2.27",
+    "@langchain/core": "^0.2.23",
+    "@langchain/ollama": "^0.0.4",
     "@nestjs/common": "^10.0.0",
     "@nestjs/core": "^10.0.0",
     "@nestjs/platform-express": "^10.0.0",
+    "cheerio": "^1.0.0",
+    "langchain": "^0.2.16",
+    "puppeteer": "^23.0.2",
     "reflect-metadata": "^0.2.0",
     "rxjs": "^7.8.1"
   },
