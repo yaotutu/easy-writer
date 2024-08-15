@@ -46,7 +46,7 @@ export class AppService {
     });
   }
   async main() {
-    this.langchainService.generateArticle('');
+    this.langchainService.analyzeAndSummarize(mockArticleContent);
     return;
     // const articleContent = await this.utilsService.getPageContent();
     const articleContent = mockArticleContent;
