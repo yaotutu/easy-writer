@@ -64,7 +64,7 @@ export class LangchainService {
     // const jsonResult = JSON.parse(result);
     try {
       const jsonResult = JSON.parse(result);
-      // this.generateArticle(jsonResult);
+      this.generateArticle(jsonResult);
       console.log(jsonResult);
       return jsonResult;
     } catch (error) {
@@ -102,7 +102,7 @@ export class LangchainService {
       核心内容：{sectionContent}
     `);
 
-    let articleContent = initialResponse + '\n'; // 将初始段落添加到文章内容中
+    let articleContent = initialResponse.response + '\n'; // 将初始段落添加到文章内容中
 
     for (const section of sections) {
       const sectionResponse = await chain.invoke({
@@ -110,7 +110,7 @@ export class LangchainService {
           sectionContent: section.content,
         }),
       });
-      articleContent += sectionResponse + '\n'; // 将每个段落添加到文章内容中
+      articleContent += sectionResponse.response + '\n'; // 将每个段落添加到文章内容中
       console.log('Section Article:', sectionResponse);
     }
     // 将文章内容保存到本地文件

@@ -46,11 +46,9 @@ export class AppService {
     });
   }
   async main() {
-    this.langchainService.analyzeAndSummarize(mockArticleContent);
-    return;
-    // const articleContent = await this.utilsService.getPageContent();
-    const articleContent = mockArticleContent;
+    const articleContent = await this.utilsService.getPageContent(
+      'https://www.toutiao.com/article/7394687537068999202/?log_from=49dde80516ea9_1723715444078',
+    );
     this.langchainService.analyzeAndSummarize(articleContent);
-    console.log(articleContent);
   }
 }

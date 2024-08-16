@@ -3,7 +3,7 @@ import puppeteer from 'puppeteer';
 const articleUrl = 'https://www.toutiao.com/article/7402819502838202907/';
 @Injectable()
 export class UtilsService {
-  async getPageContent() {
+  async getPageContent(articleUrl: string) {
     const browser = await puppeteer.launch({
       headless: true,
     });
